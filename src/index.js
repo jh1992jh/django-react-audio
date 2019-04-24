@@ -9,7 +9,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
-    uri: 'https://raudio2-jhm.herokuapp.com/graphql/',
+    uri: 'https://django-react-audio.herokuapp.com/graphql/',
     fetchOptions: {
         credentials: "include"
     },
