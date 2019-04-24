@@ -6,7 +6,7 @@ import { SHARED_QUERY } from '../Feed';
 
 const UnshareTrack = ({ sharedTrackId }) => {
     return (
-        <Mutation mutation={UNSHARE_TRACK_MUTATION} variables={{sharedTrackId}} onCompleted={() => console.log('Unshared the track...')} refetchQueries={() => [{ query: SHARED_QUERY }]}>
+        <Mutation mutation={UNSHARE_TRACK_MUTATION} variables={{sharedTrackId}} refetchQueries={() => [{ query: SHARED_QUERY }]}>
         {(unshareTrack, { loading, error}) => {
             if(loading) console.log('Unsharing the track...')
             if(error) console.log(error)

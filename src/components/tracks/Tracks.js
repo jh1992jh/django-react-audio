@@ -12,7 +12,7 @@ const Tracks = () => {
       {({data, loading, error}) => {
         if (loading) return <h3>Loading</h3>
         if (error) console.log(error);
-        console.log(data.tracks);
+        
         const tracks = data.tracks
         const genres = ['All', 'Pop', 'EDM', 'Video Game'];
         // let filteredTracks;

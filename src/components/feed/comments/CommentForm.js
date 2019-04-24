@@ -22,7 +22,7 @@ const CommentForm = ({ trackId }) => {
 
   */
   return (
-    <Mutation mutation={COMMENT_TRACK_MUTATION} onCompleted={() => console.log('Mutation Complete')} refetchQueries={() => [{ query: SHARED_QUERY }]}>
+    <Mutation mutation={COMMENT_TRACK_MUTATION} refetchQueries={() => [{ query: SHARED_QUERY }]}>
         {(commentTrack, {loading, error}) => {
             if(loading) return <ReactLoading type="bars" color="#006989" className="loading" />;
             if(error) console.log(error);

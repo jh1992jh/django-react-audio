@@ -15,8 +15,8 @@ const Register = ({ setLogin }) => {
             const handleSubmit = async(e, createUser) => {
                 e.preventDefault();
 
-                const res = await createUser();
-                console.log(res.data)
+                await createUser();
+              
             }
             return (
                 <form onSubmit={e => handleSubmit(e, createUser)}>

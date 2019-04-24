@@ -7,7 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import Tracks from './components/tracks/Tracks';
 import Feed from './components/feed/Feed';
 import Profile from './components/profile/Profile';
-import CreateTrack from './components/admin/CreateTrack';
+
 
 export const UserContext = React.createContext();
 
@@ -25,7 +25,7 @@ class App extends Component {
             <Router>
               <UserContext.Provider value={currentUser}> 
                 <Navbar currentUser={currentUser}/>
-                <Route exact path="/" component={CreateTrack} />
+                <Route exact path="/" component={Feed} />
                 <Route exact path="/tracks" component={Tracks} />
                 <Route exact path="/profile/:id" render={() => <Profile currentUser={currentUser} />} />
               </UserContext.Provider>
