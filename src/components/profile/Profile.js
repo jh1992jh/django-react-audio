@@ -8,6 +8,7 @@ import ProfileInfo from './ProfileInfo';
 
 const Profile = ({ match, currentUser }) => {
     const id = match.params.id;
+    window.scrollTo(0,0);
     return (
         <Query query={USER_QUERY} variables={{id}}>
             {({data, loading, error}) => {

@@ -78,8 +78,8 @@ class DeleteTrack(graphene.Mutation):
         # Think as findBy in mongoDB
         track = Track.objects.get(id=track_id)
 
-       # if track.posted_by != user:
-       #  raise Exception('Not permitted to delete this track')
+        if track.posted_by != user:
+            raise Exception('Not permitted to delete this track')
         
         track.delete()
 

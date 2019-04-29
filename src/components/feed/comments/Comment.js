@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import DeleteComment from './DeleteComment';
 import { UserContext } from '../../../App';
 
@@ -10,7 +11,9 @@ const Comment = ({ comment }) => {
         <div className="comment">
             <div className="comment-profile-info">
                 <img className="profile-pic" src={comment.user.profilePic} alt="avatar" />
-                <span className="username">{comment.user.username}</span>
+                <Link to={`/profile/${comment.user.id}`}>
+                    <span className="username">{comment.user.username}</span>
+                </Link>
             </div> 
             <div className="divider" />
             <div className="comment-text">

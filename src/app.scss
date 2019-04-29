@@ -85,6 +85,8 @@ button {
     margin: auto !important;
 }
 
+
+
 @mixin x-y-center {
     display: flex;
     justify-content: center;
@@ -94,6 +96,25 @@ button {
 @mixin mobile {
     @media (max-width: 820px) {
         @content
+    }
+}
+
+.error {
+    position: absolute;
+    bottom: 2em;
+    opacity: 0.8;
+    left: 30%;
+    width: 40%;
+    text-align: center;
+    background: color(primary-fill);
+    color: color(primary-bg);
+    padding: padding(m-updown);
+    border-radius: 15px;
+    font-weight: 600;
+
+    @include mobile {
+        left: 10%;
+        width: 80%;
     }
 }
 
@@ -476,6 +497,7 @@ button {
                             .username {
                                 margin-top: 2px;
                                 font-size: 0.5rem;
+                                color: color(title-font);
                             }
                         }
 

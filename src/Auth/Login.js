@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import { gql } from 'apollo-boost';
 
+import Error from '../components/error/Error';
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,13 +17,14 @@ const Login = () => {
   return (
     <Mutation mutation={LOGIN_MUTATION} variables={{username, password}}>
         {(tokenAuth, {loading, error, called, client}) => {
-            if (error) console.log(error)
-            
+          
+            if (error) console.error(error);
             return (
                 <form onSubmit={e => handleSubmit(e, tokenAuth, client)}>
                     <input id="username" value={username} onChange={e => setUsername(e.target.value)} type="text" placeholder="username"/>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="password"/>
                     <button type="submit">Submit</button>
+                    {error && <Error error={error.graphQLErrors[0].message} />}
                 </form>
             )
         }}
